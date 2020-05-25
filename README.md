@@ -1,4 +1,9 @@
-restredis replication vagrant script
+# Redis Replication
+---
+![tescom](https://en.gravatar.com/userimage/96759029/aa4308f795041de37cc2fedf0d1071ca?size=128)
+
+
+# Redis Replication vagrant script
 ---
 
 ## Directory & file
@@ -13,7 +18,6 @@ restredis replication vagrant script
  - vagrantインストール
  - データをコピー 
 
----
 ```script
 git clone https://github.com/t2sc0m/redis_replication.git {GIT_CLONE_DIRECTORY}
 ```
