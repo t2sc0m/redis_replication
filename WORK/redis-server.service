@@ -1,0 +1,16 @@
+[Unit]
+After=network.target
+
+[Service]
+Type=forking
+User=worker
+Group=worker
+LimitNOFILE=65535
+PIDFile=/home/worker/redis/redis.pid
+ExecStart=/home/worker/redis/bin/redis-server /home/worker/redis/redis.conf
+ExecStop=/home/worker/redis/bin/redis-cli shutdown
+ExecReload=/bin/kill -USR2 $MAINPID
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

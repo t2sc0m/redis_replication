@@ -1,0 +1,12 @@
+[Unit]
+After=network.target
+
+[Service]
+User=worker
+Group=worker
+ExecStart=/home/worker/redis/bin/redis-server /home/worker/redis/sentinel.conf --sentinel
+ExecStop=/home/worker/redis/bin/redis-cli -p 26379 shutdown
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
